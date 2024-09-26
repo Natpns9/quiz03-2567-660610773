@@ -11,12 +11,27 @@ export interface Message {
   roomId: string;
   messageId: string;
   messageText: string;
+  senderId: string;
+  createdAt: string;
 }
 
 export interface User {
   username: string;
   password: string;
   role: "ADMIN" | "SUPER_ADMIN";
+}
+
+export interface Payload {
+  username: string;
+  studentId: string;
+  role: string;
+}
+
+
+export interface Database{
+  rooms: Room[];
+  messages: Message[];
+  users: User[];
 }
 
 const originalDB = {
